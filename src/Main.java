@@ -99,12 +99,12 @@ public class Main {
             if (num>=divider[index]){
                 str.append(integers.get(divider[index]));
                 num-=divider[index];
-            } else if (num+divider[buf]>divider[index]){
+            } else if (num+divider[buf]>=divider[index]){
                 str.append(integers.get(divider[buf]));
                 str.append(integers.get(divider[index]));
-                index=buf-1;
-                buf = index-1;
                 num=num+divider[buf]-divider[index];
+                index--;
+                buf -=2;
             } else{
                 index--;
                 buf = buf==index?buf-2:buf;
